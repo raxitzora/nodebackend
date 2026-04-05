@@ -1,6 +1,11 @@
 import express from "express";
-import {getAllBooks,getSingleBookbyId,addNewBook,updateBook,deleteBook} from "../controllers/book-controller"
-
+import {
+  getAllBooks,
+  getSingleBookbyId,
+  addNewBook,
+  updateBook,
+  deleteBook
+} from "../controllers/book-controller.js";
 const router = express.Router()
 
 router.get("/get", getAllBooks);
