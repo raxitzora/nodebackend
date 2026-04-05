@@ -3,20 +3,7 @@ import User from "../models/User.js";
 //register
 const registerUser = async(req,res)=>{
     try {
-        const {email} = req.body;
-
-        //validation
-        if(!email){
-            return res.status(400).json({message:"Email is required"});
-        }
-
-        const existingUser = await User.findOne({email});
-
-        //if already exists
-        if(existingUser){
-            return res.status(400).json({message:"Email already exists"})
-        }
-
+    
 
 
 

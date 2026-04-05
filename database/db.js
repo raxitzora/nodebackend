@@ -12,6 +12,7 @@ const connectDB = async () => {
             throw new Error("MONGO_URI is not defined");
         }
 
+        
         // ✅ Connect to MongoDB
         const conn = await mongoose.connect(process.env.MONGO_URI, {
             serverSelectionTimeoutMS: 5000,
