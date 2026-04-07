@@ -49,7 +49,7 @@ const loginUser = async(req,res)=>{
     const user = await User.findOne({username});
 
     if(!user){
-        return res.status(400).json({success:false,message:"Invalid username or password"})
+        return res.status(400).json({success:false,message:"User doesn't exists"})
     }
 
     //if password is correct or not
@@ -65,7 +65,11 @@ const loginUser = async(req,res)=>{
         userId:user._id,
         username:user.username,
         role:user.role
+    },process.env.JWT_SECRET_KEY,{
+        expiresIn:"15m"
     })
+
+    res.status(200).json({success:true,message:"Logged Successfuly"})
 
 
 
